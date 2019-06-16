@@ -2,13 +2,11 @@
 
 using namespace std;
 
-
 vector <int> V[100];
 
 int color[100];
 
 queue <int > q;
-
 
 void BFS(int s)
 {
@@ -28,26 +26,16 @@ void BFS(int s)
             v = V[u][i];
             if(color[v]==0)
             {
-
-
                 q.push(v);
                 color[v] = 1;
             }
         }
     }
-
 }
-
-
-
-
 
 int main()
 
 {
-
-
-
     int n,E;
 
     cin>>n>>E;
@@ -62,13 +50,10 @@ int main()
         V[v].push_back(u);
     }
 
-
     int root;
     cin>>root;
 
     BFS(root);
-
-
 
     return 0;
 }
