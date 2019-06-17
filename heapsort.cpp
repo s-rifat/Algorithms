@@ -2,80 +2,60 @@
 
 using namespace std;
 
-int left(int i)
+void max_heapify(int arr[],int n,int i)
 
 {
-    return 2*i+1;
-}
+    int L,R;
+    L = 2*i+1;
+    R = 2*i+2;
 
-int right(int i)
+    int largest = i;
 
-{
-    return 2*i+2;
-}
+    if(L<n && arr[L]>arr[largest])
+        largest = L;
+    if(R<n && arr[R] > arr[largest])
+        largest = R;
 
-void max_heapify(int arr[],int i,int heap_size)
-
-{
-    int l,r,large;
-
-    l = left(i);
-    r = right(i);
-
-    if(l<heap_size && arr[l]>arr[i])
+    if(i!=largest)
     {
-        large = l;
-    }
-    else
-    {
-        large = i;
-    }
-    if(r<heap_size && arr[r]>arr[large])
-    {
-        large = r;
-    }
-    if(large!=i)
-    {
-        swap(arr[i],arr[large]);
-        max_heapify(arr,large,heap_size);
+        swap(arr[i],arr[largest]);
+        max_heapify(arr,n,largest);
     }
 
 }
 
-void build_max_heap(int arr[],int length,int heap_size)
-
+void build_max_heap(int arr[], int n)
 {
-
-    heap_size = length;
-
-    for(int i = floor((length/2-1));i>=0;i--)
+    for(int i=n/2-1;i>=0;i--)
     {
-        max_heapify(arr,i,heap_size);
+        max_heapify(arr,n,i);
     }
-
 }
 
-void heapsort(int arr[],int length, int heap_size)
+void Heapsort(int arr[], int n)
 
 {
-    build_max_heap(arr,length,heap_size);
+    build_max_heap(arr,n);
 
-    for(int i = length-1; i>=1;i--)
+    for(int i = n-1; i>=1;i--)
     {
-        swap(arr[0],arr[i]);
-        heap_size = heap_size-1;
-        max_heapify(arr,0,heap_size);
+        swap(arr[i],arr[0]);
+        n = n-1;
+        max_heapify(arr,n,0);
     }
 }
 
 int main()
-{
-    int arr[] = {-5,100,2,-10,5,5};
-    heapsort( arr,6, 6);
 
-    for(int i=0;i<6;i++)
+{
+    int arr[10] = {1,3,2,4,700,-5,6,-8,10,9};
+
+    Heapsort(arr,10);
+
+    for(int i=0;i<10;i++)
     {
         cout<<arr[i]<<" ";
     }
+
     return 0;
 }
