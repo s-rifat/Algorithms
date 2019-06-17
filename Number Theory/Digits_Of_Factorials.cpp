@@ -1,10 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int findDigits(int n)
 {
-
     if (n < 0)
         return 0;
 
