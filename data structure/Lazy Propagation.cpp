@@ -43,6 +43,29 @@ ll  query(ll  pos,ll  left, ll  right, ll  qleft, ll  qright)
     ll  mid = (left+right)/2;
     return (query(2*pos,left, mid, qleft,qright)+query(2*pos+1,  mid+1, right,  qleft, qright));
 }
+ll  point_query(ll  pos,ll  left, ll  right, ll  att)
+{
+    if(lazy[pos]!=0) // making sure if propagation is done
+    {
+        tree[pos]+= lazy[pos]* (right-left+1);
+        if(left!=right)//not a leaf node
+        {
+            lazy[2*pos] += lazy[pos];
+            lazy[2*pos+1] += lazy[pos];
+        }
+        lazy[pos] = 0;
+    }
+    if(left==right)
+    {
+       return tree[pos];
+    }
+    int mid = (left+right)/2;
+
+    if(att<=mid)
+        point_query(2*pos,left,mid,att);
+    else
+        point_query(2*pos+1,mid+1,right,att);
+}
 void update(ll  pos, ll  left, ll  right,ll  qleft, ll  qright, ll  val)
 {
     if(lazy[pos]!=0) // making sure if propagation is done. this should be before no overlap condition
