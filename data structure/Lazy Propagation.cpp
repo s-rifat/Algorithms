@@ -62,9 +62,9 @@ ll  point_query(ll  pos,ll  left, ll  right, ll  att)
     int mid = (left+right)/2;
 
     if(att<=mid)
-        point_query(2*pos,left,mid,att);
+        return point_query(2*pos,left,mid,att);
     else
-        point_query(2*pos+1,mid+1,right,att);
+        return point_query(2*pos+1,mid+1,right,att);
 }
 void update(ll  pos, ll  left, ll  right,ll  qleft, ll  qright, ll  val)
 {
