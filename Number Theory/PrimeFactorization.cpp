@@ -18,8 +18,8 @@ vector<ll> prime,P,E;
 
 void sieve(ll N)
 {
-        ll i, j, sqrtN;
-        sqrtN = ll( sqrt( N ) );
+    ll i, j, sqrtN;
+    sqrtN = ll( sqrt( N ) );
 	for( i = 3; i <= sqrtN; i += 2 )
 	{
 		if( Check(status[i/32],i%32)==0)
