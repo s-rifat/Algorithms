@@ -1,14 +1,13 @@
 #include<bits/stdc++.h>
-
 using namespace std;
 
 
 bool Check(int N,int pos)
 {
     return (bool)(N & (1<<pos));
-    }
-int Set(int N,int pos)
+}
 
+int Set(int N,int pos)
 {
     return N=N | (1<<pos);
 }
@@ -33,16 +32,14 @@ void sieve()
 	 /*puts("2");
 	 for(i=3;i<=N;i+=2)
      {
-
 		 if( Check(status[i/32],i%32)==0)
          {
 	 	    printf("%d\n",i);
          }
      }*/
-
 }
-bool isPrime(int a)
 
+bool isPrime(int a)
 {
     if(a<2)
         return false;
@@ -55,12 +52,10 @@ bool isPrime(int a)
     return false;
 }
 int main()
-
 {
     sieve();
 
     int a = 99998953; // largest prime less than 10^8 is 99998953
-
     cout<<isPrime(a)<<endl;
 
     return 0;
