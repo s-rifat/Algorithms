@@ -28,9 +28,9 @@ void sieve()
 				 status[j/32]=Set(status[j/32],j % 32)   ;
 	 		 }
 		 }
-	 }
-	 /*puts("2");
-	 for(i=3;i<=N;i+=2)
+     }
+   /*puts("2");
+     for(i=3;i<=N;i+=2)
      {
 		 if( Check(status[i/32],i%32)==0)
          {
