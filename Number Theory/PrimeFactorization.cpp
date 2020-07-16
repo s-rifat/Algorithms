@@ -30,6 +30,7 @@ void sieve(ll N)
 	 		 }
 		 }
 	 }
+
 	 prime.push_back(2);
 	 for(i=3;i<=N;i+=2)
      {
