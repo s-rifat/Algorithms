@@ -21,7 +21,7 @@ void print_LIS(vector<int>& f,int *arr,int n)
        printf("\n");
 }
 
-vector<int> LIS(int *arr, int n)
+/*vector<int>*/int LIS (int *arr, int n)
 {
     vector<int>f(n+1);
     int b[n+1];
@@ -32,9 +32,10 @@ vector<int> LIS(int *arr, int n)
           answer = max(answer, f[i]);
           b[f[i]]=arr[i];
     }
-    f[0] = answer;//index zero contains the length of LIS
+    return answer;
+    /*f[0] = answer;//index zero contains the length of LIS
     print_LIS(f,arr,n);
-    return f; // it can also return the only answer
+    return f; // it can also return the only answer*/
 }
 
 int main()
@@ -46,8 +47,9 @@ int main()
     {
         cin>>arr[i];
     }
+    cout<<LIS(arr,n)<<endl;
 
-    vector <int> f;
+   /* vector <int> f;
     f = LIS(arr,n);
 
     cout<<f[0]<<endl;
@@ -55,8 +57,6 @@ int main()
     {
        cout<<f[i]<<" ";
     }
-    cout<<endl;
-
-
+    cout<<endl;*/
     return 0;
 }
