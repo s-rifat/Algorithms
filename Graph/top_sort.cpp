@@ -8,7 +8,8 @@ int color[N];
 void DFS(int u)
 {
     color[u] = 1;
-    for(int i=V[u].size()-1;i>=0;i--)
+    int n = V[u].size();
+    for(int i=n-1;i>=0;i--)
     {
         int v = V[u][i];
         if(color[v]==0)
