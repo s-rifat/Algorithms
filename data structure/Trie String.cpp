@@ -85,6 +85,9 @@ int main()
 
         }
 
+        string str; //for printing
+        print(root,str,0);//for printing
+
         int q;
         cin>>q;
 
@@ -104,8 +107,7 @@ int main()
 
         }
 
-       /* string str; //for printing
-        print(root,str,0);//for printing*/
+
 
         del(root);
 
