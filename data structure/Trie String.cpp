@@ -49,6 +49,22 @@ void del(node* cur)
     delete (cur);
 }
 
+void print(node* curr, string& str,  int id)
+{
+   if(curr->endmark)
+        cout<<str<<endl;
+   for(int i=0;i<26;i++)
+   {
+       if(curr->next[i]!=NULL)
+       {
+            char c = i+'a';
+            string s = str;
+            s.push_back(c);
+            print(curr->next[i],s,i);
+       }
+   }
+}
+
 
 int main()
 {
@@ -87,6 +103,9 @@ int main()
             }
 
         }
+
+       /* string str; //for printing
+        print(root,str,0);//for printing*/
 
         del(root);
 
