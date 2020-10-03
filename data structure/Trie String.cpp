@@ -49,7 +49,7 @@ void del(node* cur)
     delete (cur);
 }
 
-void print(node* curr, string& str,  int id)
+void print(node* curr, string& str)
 {
    if(curr->endmark)
         cout<<str<<endl;
@@ -60,7 +60,7 @@ void print(node* curr, string& str,  int id)
             char c = i+'a';
             string s = str;
             s.push_back(c);
-            print(curr->next[i],s,i);
+            print(curr->next[i],s);
        }
    }
 }
@@ -85,8 +85,8 @@ int main()
 
         }
 
-        string str; //for printing
-        print(root,str,0);//for printing
+        string str = ""; //for printing
+        print(root,str);//for printing
 
         int q;
         cin>>q;
