@@ -15,7 +15,8 @@ void sieve(int n)
                 isPrime[i] = 0;
         }
     }
-    for(int i=2;i<=n;i++)
+    prime.push_back(2);
+    for(int i=3;i<=n;i+=2)
     {
         if(isPrime[i])
             prime.push_back(i);
