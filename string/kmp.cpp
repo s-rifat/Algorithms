@@ -20,8 +20,7 @@ void KMP (string text, string pattern) {
     while (i < text.length()) {
         if (text[i] == pattern[j]) i++, j++;
         else {
-            if (j != 0) j = lps[j - 1];
-            else i++;
+            if (j != 0) j = lps[j - 1]; else i++;
         }
         if (j == pattern.length()) {
             cout << "found match at : " << (i - pattern.length()) << endl;
