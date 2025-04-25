@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -64,7 +65,7 @@ void find_scc()
               cnt++;
               DFS2(a);
           }
-          if(check-1>1)
+          if(check>1)
             crclno++;
       }
       cout<<endl;
